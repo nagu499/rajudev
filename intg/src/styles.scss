@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nextBtn {
+  background-color: #1a40c9;
+  border: none;
+  color: white;
+  text-align: center;
+  min-width: 100px;
+  min-height: 40px;
+  border-radius: 3px;
+}
+
+.prevBtn {
+  background-color: transparent !important;
+  border: 1px solid #d8dae4 !important;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.select2-container .select2-selection--single,
+.select2-container--default .select2-selection--single .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  height: 38px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 38px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+#businessStructure-error,
+#yearsInBusiness-error {
+  position: absolute;
+  margin-top: 72px;
+  left: 8px;
+}
+th{
+  font-weight: 500;
+}

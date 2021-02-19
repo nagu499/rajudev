@@ -1,0 +1,52 @@
+<!-----------Step progress--------->
+<div class="step-progress">
+  <div class="container" #container>
+    <ng-container *ngFor="let item of itemProgressList; index as i">
+      <div class="check-box" [ngClass]="{
+            complete: item.status === 'completed',
+            active: item.status === 'in progress'
+          }">
+        <svg id="checkbox" viewBox="0 0 100 100" style="enable-background:new 0 0 512 512;">
+          <circle class="circle" cx="50.5" cy="49" r="45" />
+          <polyline class="check" points="28.5,51.9 41.9,65.3 72.5,32.8 " />
+
+        </svg>
+        <div [ngClass]="{
+              complete: item.status === 'completed',
+              active: item.status === 'in progress'
+            }" class="progress-line" *ngIf="i !== itemLength - 1">
+          <div class="progress-percent"></div>
+        </div>
+        <div class="info">
+          <span class="step">step {{ i + 1 }}</span>
+          <span class="progress-info" [ngClass]="{
+                'completed': item.status === 'completed',
+                'in-progress': item.status === 'in progress'
+              }">{{ item.status }}</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <!------------ Exclusions Modal ------------>
+  <div class="modal fade" id="errorModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content border-0">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Message</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>You have exclusions so not allowed to create a quote</h6>
+          <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--------------Loading content------------->
+<div class="step-content">
+  <ng-content select="app-progress-step"></ng-content>
+</div>
