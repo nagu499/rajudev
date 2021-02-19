@@ -1,0 +1,40 @@
+<!------------Payment details----------->
+<div class="container shadow mt-5 rounded pb-4">
+    <h4 class="text-center text-primary mb-5 mt-5 pt-3 text-info">Thank you for your Application! </h4>
+    <table class="table">
+        <thead class="text-primary">
+            <tr>
+                <th scope="col text-success">Class Code</th>
+                <th scope="col">Payroll</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Premium</th>
+            </tr>
+        </thead>
+        <tbody class="text-info">
+            <tr *ngFor="let item of resultClassCodeObj;let i=index">
+                <th scope="row">{{item.classCode.toLocaleString("en")}}</th>
+                <td>{{resultClassCodeObj[i].payroll.toLocaleString("en")}}</td>
+                <td>5.40</td>
+                <td>{{Premium[i].toLocaleString("en")}}</td>
+            </tr>
+
+        </tbody>
+        <tbody class="text-info">
+            <tr *ngFor="let item of otherPaymentDetails;let i=index">
+                <th scope="row">{{item.itemName}}</th>
+                <td></td>
+                <td></td>
+                <td>{{item.itemPremium.toLocaleString("en")}}</td>
+            </tr>
+
+        </tbody>
+        <tbody class="bg-info text-white mb-5">
+            <tr>
+                <th scope="row">Estimated Annual Premium</th>
+                <td></td>
+                <td></td>
+                <td>${{grandTotal.toLocaleString("en")}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
